@@ -40,7 +40,7 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-white py-20 md:py-28"
+      className="relative overflow-hidden bg-white py-20 md:py-28 bg-grid-slate min-h-screen "
     >
       {/* subtle grid background */}
       <div className="absolute inset-0 -z-10 bg-grid-home" />
