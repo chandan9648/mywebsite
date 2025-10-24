@@ -103,26 +103,24 @@ const Home = () => {
               </svg>
             </Link>
 
-            <Link
-              to="#"
-              target="_blank"
-              rel="noreferrer"
-              className="p-3 bg-white rounded-lg shadow hover:shadow-md transition"
-              aria-label="Instagram"
-            >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-              >
-                <rect x="2" y="2" width="20" height="20" rx="5" />
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z" />
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-              </svg>
-            </Link>
+          <Link
+  to="https://x.com/chandan101204"
+  target="_blank"
+  rel="noreferrer"
+  className="p-3 bg-white rounded-lg shadow hover:shadow-md transition"
+  aria-label="Twitter (X)"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+  >
+    <path d="M18.244 2H21.5l-7.66 8.74L22 22h-6.09l-4.77-6.02L5.91 22H2l8.17-9.32L2 2h6.18l4.38 5.72L18.24 2zM17.16 20h1.67L7.02 4H5.26l11.9 16z"/>
+  </svg>
+</Link>
+
           </div>
         </div>
 

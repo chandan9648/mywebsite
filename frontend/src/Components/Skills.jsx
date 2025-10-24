@@ -2,8 +2,8 @@ const Skills = () => {
   const groups = [
     { title: "Frontend Development", tags: ["React", "JavaScript", "TailwindCSS"] },
     { title: "Backend Development", tags: ["Node.js", "Express", "REST API"] },
-    { title: "Data & DB", tags: ["SQL", "NoSQL", "Data Analysis"] },
-    { title: "CMS & Others", tags: ["WordPress", "AI Agents", "App Dev"] },
+    { title: "Data & DataBase", tags: ["SQL", "NoSQL", "Data Analysis"] },
+    { title: "CMS & Others", tags: [ "AI Agents", "ChatBot", "App Dev"] },
   ];
   return (
     <section id="skills" className="py-20 bg-slate-50">
