@@ -22,9 +22,9 @@ const Footer = () => {
         <div>
           <h4 className="font-medium">Connect</h4>
           <div className="mt-2 flex gap-3 text-slate-400">
-            <a href="#" className="hover:text-white">Email</a>
-            <a href="#" className="hover:text-white">LinkedIn</a>
-            <a href="#" className="hover:text-white">Instagram</a>
+            <Link to="mailto:chandankkumar156@gmail.com" className="hover:text-white">Email</Link>
+            <Link to="https://www.linkedin.com/in/chandan-310156273/" className="hover:text-white">LinkedIn</Link>
+            <Link to="#" className="hover:text-white">Instagram</Link>
           </div>
         </div>
       </div>
