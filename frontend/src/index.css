@@ -89,3 +89,17 @@ html, body {
 .animate-spin-slow {
   animation: spin-slow 8s linear infinite;
 }
+
+/* Home-only square grid background */
+.bg-grid-home {
+	background-image: linear-gradient(rgba(226, 232, 240, 0.6) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(226, 232, 240, 0.6) 1px, transparent 1px);
+	background-size: 40px 40px;
+	background-position: center;
+}
+@media (min-width: 768px) {
+	.bg-grid-home { background-size: 48px 48px; }
+}
+@media (min-width: 1024px) {
+	.bg-grid-home { background-size: 64px 64px; }
+}

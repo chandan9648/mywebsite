@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { SiMongodb, SiReact, SiJavascript } from "react-icons/si";
 
 
@@ -42,7 +43,7 @@ const Home = () => {
       className="relative overflow-hidden bg-white py-20 md:py-28"
     >
       {/* subtle grid background */}
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#f3f4f6_1px,transparent_1px),linear-gradient(to_bottom,#f3f4f6_1px,transparent_1px)] bg-[size:40px_40px]" />
+      <div className="absolute inset-0 -z-10 bg-grid-home" />
 
       <div className="mx-auto max-w-6xl px-6 grid md:grid-cols-2 gap-14 items-center">
         {/* LEFT: Text section */}
@@ -61,18 +62,18 @@ const Home = () => {
 
           {/* CTA Buttons */}
           <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="#contact"
+            <Link
+              to="#contact"
               className="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-indigo-700 transition"
             >
               <MailIcon /> Get In Touch
-            </a>
-            <a
-              href="#projects"
+            </Link>
+            <Link
+              to="#projects"
               className="inline-flex items-center gap-2 border border-indigo-200 text-indigo-600 px-6 py-3 rounded-md hover:bg-indigo-50 transition"
             >
               <CodeIcon /> View Projects
-            </a>
+            </Link>
           </div>
 
           {/* Socials */}
