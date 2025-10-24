@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Contact = () => {
   return (
     <section id="contact" className="py-20">
@@ -12,11 +14,11 @@ const Contact = () => {
             </div>
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <h3 className="text-xl font-semibold text-slate-900">Email</h3>
-              <p>contact@chandanc.dev</p>
+              <Link to="mailto:chandankkumar156@gmail.com">chandankkumar156@gmail.com</Link>
             </div>
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <h3 className="text-xl font-semibold text-slate-900">LinkedIn</h3>
-              <p>linkedin.com/in/chandan-chaudhary</p>
+              <Link to="https://www.linkedin.com/in/chandan-310156273/">linkedin.com/in/chandan-310156273</Link>
             </div>
           </div>
           <form className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm space-y-3">
