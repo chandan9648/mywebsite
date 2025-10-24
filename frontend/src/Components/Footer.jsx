@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="mt-2 flex gap-3 text-slate-400">
             <Link to="mailto:chandankkumar156@gmail.com" className="hover:text-white">Email</Link>
             <Link to="https://www.linkedin.com/in/chandan-310156273/" className="hover:text-white">LinkedIn</Link>
-            <Link to="#" className="hover:text-white">Instagram</Link>
+            <Link to="https://x.com/chandan101204" className="hover:text-white">Twitter</Link>
           </div>
         </div>
       </div>
