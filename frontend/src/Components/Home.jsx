@@ -35,7 +35,7 @@ const CodeIcon = () => (
   </svg>
 );
 
-const Hero = () => {
+const Home = () => {
   return (
     <section
       id="home"
@@ -166,4 +166,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Home;
