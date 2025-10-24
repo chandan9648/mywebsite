@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { SiMongodb, SiReact, SiJavascript } from "react-icons/si";
+import { SiDatabricks, SiReact, SiJavascript, SiNodedotjs, } from "react-icons/si";
 
 
 const MailIcon = () => (
@@ -103,23 +103,23 @@ const Home = () => {
               </svg>
             </Link>
 
-          <Link
-  to="https://x.com/chandan101204"
-  target="_blank"
-  rel="noreferrer"
-  className="p-3 bg-white rounded-lg shadow hover:shadow-md transition"
-  aria-label="Twitter (X)"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-  >
-    <path d="M18.244 2H21.5l-7.66 8.74L22 22h-6.09l-4.77-6.02L5.91 22H2l8.17-9.32L2 2h6.18l4.38 5.72L18.24 2zM17.16 20h1.67L7.02 4H5.26l11.9 16z"/>
-  </svg>
-</Link>
+            <Link
+              to="https://x.com/chandan101204"
+              target="_blank"
+              rel="noreferrer"
+              className="p-3 bg-white rounded-lg shadow hover:shadow-md transition"
+              aria-label="Twitter (X)"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M18.244 2H21.5l-7.66 8.74L22 22h-6.09l-4.77-6.02L5.91 22H2l8.17-9.32L2 2h6.18l4.38 5.72L18.24 2zM17.16 20h1.67L7.02 4H5.26l11.9 16z" />
+              </svg>
+            </Link>
 
           </div>
         </div>
@@ -147,17 +147,22 @@ const Home = () => {
             </svg>
 
             {/* Floating icons */}
-            <div className="absolute -left-5 top-1/2 -translate-y-1/2 bg-white/40 backdrop-blur-xl text-green-600 p-4 rounded-2xl shadow-lg animate-float-slow">
-              <SiMongodb size={26} />
+            <div className="absolute -left-5 top-1/2 -translate-y-1/2 bg-white/100 backdrop-blur-xl text-green-600 p-4 rounded-2xl shadow-lg animate-float-slow">
+              <SiDatabricks size={26} />
             </div>
 
-            <div className="absolute -right-4 top-10 bg-white/40 backdrop-blur-xl text-cyan-500 p-4 rounded-2xl shadow-lg animate-float-medium">
+            <div className="absolute -right-0 top-10 bg-white/100 backdrop-blur-xl text-cyan-500 p-4 rounded-2xl shadow-lg animate-float-medium">
               <SiReact size={26} className="animate-spin-slow" />
             </div>
 
-            <div className="absolute left-1/2 -bottom-5 -translate-x-1/2 bg-white/40 backdrop-blur-xl text-yellow-500 p-4 rounded-2xl shadow-lg animate-float-delay">
+            <div className="absolute left-1/2 -bottom-5 -translate-x-1/2 bg-white/100 backdrop-blur-xl text-yellow-500 p-4 rounded-2xl shadow-lg animate-float-delay">
               <SiJavascript size={26} />
             </div>
+
+            <div className="absolute left-1/3 top-0 -translate-x-1/2 bg-white/100 backdrop-blur-xl text-yellow-500 p-4 rounded-2xl shadow-lg animate-float-delay">
+              <SiNodedotjs size={26} />
+            </div>
+
           </div>
         </div>
       </div>
