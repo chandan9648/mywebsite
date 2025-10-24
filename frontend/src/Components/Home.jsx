@@ -78,16 +78,16 @@ const Home = () => {
 
           {/* Socials */}
           <div className="mt-8 flex gap-4">
-            <a
-              href="mailto:contact@chandanc.dev"
+            <Link
+              to="mailto:chandankkumar156@gmail.com"
               className="p-3 bg-white rounded-lg shadow hover:shadow-md transition"
               aria-label="Email"
             >
               <MailIcon />
-            </a>
+            </Link>
 
-            <a
-              href="#"
+            <Link
+              to="https://www.linkedin.com/in/chandan-310156273"
               target="_blank"
               rel="noreferrer"
               className="p-3 bg-white rounded-lg shadow hover:shadow-md transition"
@@ -101,10 +101,10 @@ const Home = () => {
               >
                 <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4zM8.5 8.5h3.8v2h.06c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.13V23h-3.99v-6.5c0-1.55-.03-3.54-2.16-3.54-2.16 0-2.49 1.68-2.49 3.42V23H8.5z" />
               </svg>
-            </a>
+            </Link>
 
-            <a
-              href="#"
+            <Link
+              to="#"
               target="_blank"
               rel="noreferrer"
               className="p-3 bg-white rounded-lg shadow hover:shadow-md transition"
@@ -122,7 +122,7 @@ const Home = () => {
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z" />
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
 
