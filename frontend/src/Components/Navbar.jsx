@@ -28,17 +28,17 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
-      <div className="mx-auto max-w-6xl px-5 py-4 flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur shadow-sm border-slate-200">
+      <div className="mx-auto max-w-6xl px-5 py-6 flex items-center justify-between">
         <Link
           to="#home"
-          className="text-lg md:text-xl tracking-tight text-indigo-600 font-semibold"
+          className="text-lg md:text-2xl tracking-tight text-indigo-600 font-semibold"
         >
           Chandan Chaudhary
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex gap-8 text-slate-800 font-medium">
+        <nav className="hidden md:flex gap-12 text-slate-800 font-medium">
           {links.map((l) => (
             <Link
               key={l.href}
