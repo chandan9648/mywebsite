@@ -63,6 +63,20 @@ const About = () => {
               </div>
             </div>
 
+            <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm text-slate-700 hover:translate-x-2 transition-transform duration-300">
+  <span className="inline-flex h-14 w-14 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
+    {/* Graduation Cap Icon (Internship) */}
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="h-8 w-8">
+      <path d="M12 3L1 9l11 6 9-4.91V17a1 1 0 0 0 2 0V9L12 3Zm0 11.09L4.26 9 12 4.91 19.74 9 12 14.09ZM6 15v2a6 6 0 0 0 12 0v-2h-2v2a4 4 0 0 1-8 0v-2H6Z"/>
+    </svg>
+  </span>
+  <div>
+    <div className="text-3xl font-bold text-indigo-600">2+</div>
+    <div className="text-md">Internship</div>
+  </div>
+</div>
+
+
 
             <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm text-slate-700 hover:translate-x-2 transition-transform duration-300">
               <span className="inline-flex h-14 w-14 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
@@ -78,7 +92,7 @@ const About = () => {
           </div>
 
           {/* Full-width: My Approach */}
-          <div className="rounded-2xl border-l-4 border-indigo-600 bg-white p-6 shadow-sm md:col-span-2">
+          <div className="rounded-2xl border-l-4 border-indigo-600 bg-white p-6 shadow-sm md:col-span-1 hover:translate-y-2 transition-transform duration-300">
             <h3 className="text-xl font-semibold text-slate-900">🎯 My Approach</h3>
             <p className="mt-2 text-slate-700 leading-relaxed">
               Every project is an opportunity to create something exceptional. I focus on clean,
