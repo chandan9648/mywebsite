@@ -29,6 +29,15 @@ const About = () => {
                 challenges that push the boundaries of what's possible with code.
               </p>
             </div>
+              {/* Full-width: My Approach */}
+          <div className="rounded-2xl border-l-4 border-indigo-600 bg-white p-6 shadow-sm md:col-span-1 hover:translate-y-2 transition-transform duration-300 hover:shadow-lg">
+            <h3 className="text-xl font-semibold text-slate-900">🎯 My Approach</h3>
+            <p className="mt-2 text-slate-700 leading-relaxed">
+              Every project is an opportunity to create something exceptional. I focus on clean,
+              scalable code, user-centric design, and performance optimization. My goal is not just
+              to meet requirements, but to exceed expectations.
+            </p>
+          </div>
 
 
           </div>
@@ -91,15 +100,7 @@ const About = () => {
             </div>
           </div>
 
-          {/* Full-width: My Approach */}
-          <div className="rounded-2xl border-l-4 border-indigo-600 bg-white p-6 shadow-sm md:col-span-1 hover:translate-y-2 transition-transform duration-300 hover:shadow-lg">
-            <h3 className="text-xl font-semibold text-slate-900">🎯 My Approach</h3>
-            <p className="mt-2 text-slate-700 leading-relaxed">
-              Every project is an opportunity to create something exceptional. I focus on clean,
-              scalable code, user-centric design, and performance optimization. My goal is not just
-              to meet requirements, but to exceed expectations.
-            </p>
-          </div>
+        
         </div>
       </div>
     </section>
