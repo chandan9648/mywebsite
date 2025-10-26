@@ -21,8 +21,8 @@ const MailIcon = () => (
 
 const CodeIcon = () => (
   <svg
-    width="18"
-    height="18"
+    width="20"
+    height="20"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -90,7 +90,7 @@ const Home = () => {
               to="https://www.linkedin.com/in/chandan-310156273"
               target="_blank"
               rel="noreferrer"
-              className="p-3 bg-white rounded-lg shadow hover:shadow-md transition"
+              className="p-3 bg-white rounded-lg shadow hover:shadow-md transition "
               aria-label="LinkedIn"
             >
               <svg
@@ -126,7 +126,7 @@ const Home = () => {
 
         {/* RIGHT: Glowing Card */}
         <div className="relative flex justify-center">
-          <div className="relative h-72 w-72 md:h-80 md:w-80 rounded-3xl bg-gradient-to-br from-indigo-500 to-indigo-600 shadow-2xl grid place-items-center text-white overflow-hidden">
+          <div className="relative h-72 w-72 md:h-95 md:w-95 rounded-3xl bg-gradient-to-br from-indigo-500 to-indigo-600 shadow-2xl grid place-items-center text-white overflow-hidden">
             {/* Glow Blur Background */}
             <div className="absolute inset-0 bg-gradient-to-tr from-indigo-400 via-purple-500 to-pink-400 opacity-30 blur-2xl" />
 
