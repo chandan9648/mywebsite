@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FiMapPin, FiMail, FiLinkedin, FiInstagram } from "react-icons/fi";
 
@@ -65,41 +66,7 @@ const Contact = () => {
           </div>
 
           {/* Right: Form */}
-          <form className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm space-y-3">
-            <input
-              placeholder="Full Name"
-              className="w-full rounded-md border border-slate-300 px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white"
-            />
-            <input
-              placeholder="Email Address"
-              className="w-full rounded-md border border-slate-300 px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white"
-            />
-            <input
-              placeholder="Subject"
-              className="w-full rounded-md border border-slate-300 px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white"
-            />
-            <select className="w-full rounded-md border border-slate-300 px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white ">
-              <option>Select a service</option>
-              <option>Web Development</option>
-              <option>CMS Solutions</option>
-              <option>Data Science</option>
-              <option>Application Development</option>
-              <option>AI Agent Development</option>
-              <option>API Development</option>
-              <option>Others</option>
-            </select>
-            <textarea
-              placeholder="Message"
-              rows={6}
-              className="w-full rounded-md border border-slate-300 px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white resize-none"
-            />
-            <button
-              type="button"
-              className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-3 font-medium text-white shadow hover:bg-indigo-500 hover:shadow-lg hover:bg-indigo-700 transition cursor-pointer"
-            >
-              Send Message
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </div>
     </section>
@@ -107,3 +74,108 @@ const Contact = () => {
 };
 
 export default Contact;
+
+// ----- Form component -----
+const ContactForm = () => {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    service: "",
+    message: "",
+  });
+  const [status, setStatus] = useState({ loading: false, ok: null, error: "" });
+
+  const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
+
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    setForm((f) => ({ ...f, [name]: value }));
+  };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ loading: true, ok: null, error: "" });
+    try {
+      const res = await fetch(`${API_BASE}/api/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          service: form.service || "Others",
+          message: form.message,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.ok) throw new Error(data.error || "Submission failed");
+      setStatus({ loading: false, ok: true, error: "" });
+      setForm({ name: "", email: "", subject: "", service: "", message: "" });
+    } catch (err) {
+      setStatus({ loading: false, ok: false, error: err.message });
+    }
+  };
+
+  return (
+    <form onSubmit={onSubmit} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm space-y-3">
+      <input
+        name="name"
+        value={form.name}
+        onChange={onChange}
+        placeholder="Full Name"
+        className="w-full rounded-md border border-slate-300 px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white"
+      />
+      <input
+        name="email"
+        value={form.email}
+        onChange={onChange}
+        placeholder="Email Address"
+        className="w-full rounded-md border border-slate-300 px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white"
+      />
+      <input
+        name="subject"
+        value={form.subject}
+        onChange={onChange}
+        placeholder="Subject"
+        className="w-full rounded-md border border-slate-300 px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white"
+      />
+      <select
+        name="service"
+        value={form.service}
+        onChange={onChange}
+        className="w-full rounded-md border border-slate-300 px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white "
+      >
+        <option value="">Select a service</option>
+        <option>Web Development</option>
+        <option>CMS Solutions</option>
+        <option>Data Science</option>
+        <option>Application Development</option>
+        <option>AI Agent Development</option>
+        <option>API Development</option>
+        <option>Others</option>
+      </select>
+      <textarea
+        name="message"
+        value={form.message}
+        onChange={onChange}
+        placeholder="Message"
+        rows={6}
+        className="w-full rounded-md border border-slate-300 px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white resize-none"
+      />
+      <button
+        type="submit"
+        disabled={status.loading}
+        className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-3 font-medium text-white shadow hover:bg-indigo-500 disabled:opacity-60 disabled:cursor-not-allowed"
+      >
+        {status.loading ? 'Sending…' : 'Send Message'}
+      </button>
+      {status.ok && (
+        <p className="text-emerald-600 text-sm">Thanks! Your message has been sent.</p>
+      )}
+      {status.ok === false && (
+        <p className="text-red-600 text-sm">{status.error}</p>
+      )}
+    </form>
+  );
+};

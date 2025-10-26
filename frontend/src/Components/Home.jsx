@@ -63,7 +63,7 @@ const Home = () => {
           {/* CTA Buttons */}
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
-              to="#contact"
+              to="mailto:chandankkumar156@gmail.com"
               className="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-indigo-700 transition"
             >
               <MailIcon /> Get In Touch
