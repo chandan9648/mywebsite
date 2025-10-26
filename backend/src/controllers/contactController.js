@@ -1,5 +1,6 @@
 const nodemailer = require('nodemailer');
 const ContactMessage = require('../models/ContactMessage');
+const { response } = require('../app');
 
 function required(field, value) {
   if (!value || String(value).trim() === '') {
@@ -22,6 +23,14 @@ async function sendEmail({ name, email, subject, service, message }) {
     auth: { user: SMTP_USER, pass: SMTP_PASS },
   });
 
+//  // ✅ Step 1: Verify SMTP connection
+try {
+  await transporter.verify();
+  console.log("✅ SMTP connection successful.");
+} catch (verifyErr) {
+  console.error("❌ SMTP connection failed:", verifyErr);
+  return { error: "SMTP verify failed", details: verifyErr.message };
+}
   const info = await transporter.sendMail({
     from: `Portfolio Contact <${SMTP_USER}>`,
     to: MAIL_TO,
@@ -39,8 +48,8 @@ async function sendEmail({ name, email, subject, service, message }) {
     `,
   });
   
-
-  return { messageId: info.messageId };
+console.log("Email sent:", info);
+  return { messageId: info.messageId, accepted: info.accepted, response: info.response };
 }
 
 exports.create = async (req, res) => {
