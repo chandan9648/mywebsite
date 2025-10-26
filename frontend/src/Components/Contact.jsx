@@ -1,38 +1,104 @@
 import { Link } from "react-router-dom";
+import { FiMapPin, FiMail, FiLinkedin, FiInstagram } from "react-icons/fi";
+
+const IconBox = ({ children }) => (
+  <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-100 text-indigo-600">
+    {children}
+  </span>
+);
+
+const ContactCard = ({ icon: Icon, title, children }) => (
+  <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:translate-x-2 transition-transform duration-300 hover:shadow-lg">
+    <div className="flex items-start gap-4 ">
+      <IconBox>
+        <Icon size={20} />
+      </IconBox>
+      <div>
+        <h3 className="text-base font-semibold text-slate-900">{title}</h3>
+        <div className="mt-1 text-slate-600">{children}</div>
+      </div>
+    </div>
+  </div>
+);
 
 const Contact = () => {
   return (
     <section id="contact" className="py-20">
       <div className="mx-auto max-w-6xl px-4">
         <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 text-center">Get In Touch</h2>
-        <p className="mt-2 text-center text-slate-600">Let's work together on your next project</p>
-        <div className="mt-10 grid md:grid-cols-2 gap-6">
-          <div className="space-y-4">
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="text-xl font-semibold text-slate-900">Location</h3>
-              <p>India</p>
-            </div>
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="text-xl font-semibold text-slate-900">Email</h3>
-              <Link to="mailto:chandankkumar156@gmail.com">chandankkumar156@gmail.com</Link>
-            </div>
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="text-xl font-semibold text-slate-900">LinkedIn</h3>
-              <Link to="https://www.linkedin.com/in/chandan-310156273/">linkedin.com/in/chandan-310156273</Link>
-            </div>
+        <div className="mt-2 flex justify-center">
+          <span className="block h-1 w-14 rounded bg-indigo-500"></span>
+        </div>
+        <p className="mt-3 text-center text-slate-600">Let's work together on your next project</p>
+
+        <div className="mt-10 grid md:grid-cols-2 gap-8 items-start">
+          {/* Left: Contact details */}
+          <div className="space-y-4 ">
+            <ContactCard icon={FiMapPin} title="Location" className="">
+              Maharajganj, Uttar Pradesh<br />India
+            </ContactCard>
+            <ContactCard icon={FiMail} title="Email">
+              <Link to="mailto:chandankkumar156@gmail.com" className="text-indigo-600 hover:underline">
+                chandankkumar156@gmail.com
+              </Link>
+            </ContactCard>
+            <ContactCard icon={FiLinkedin} title="LinkedIn">
+              <Link
+                to="https://www.linkedin.com/in/amitranjanmaurya"
+                target="_blank"
+                rel="noreferrer"
+                className="text-indigo-600 hover:underline"
+              >
+                linkedin.com/in/chandan-310156273
+              </Link>
+            </ContactCard>
+            <ContactCard icon={FiInstagram} title="Instagram">
+              <Link
+                to="https://instagram.com/mr.chandan.156"
+                target="_blank"
+                rel="noreferrer"
+                className="text-indigo-600 hover:underline"
+              >
+                @mr.chandan.156
+              </Link>
+            </ContactCard>
           </div>
-          <form className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm space-y-3">
-            <input placeholder="Full Name" className="w-full rounded-md border border-slate-300 px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white" />
-            <input placeholder="Email Address" className="w-full rounded-md border border-slate-300 px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white" />
-            <input placeholder="Subject" className="w-full rounded-md border border-slate-300 px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white" />
-            <select className="w-full rounded-md border border-slate-300 px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white">
+
+          {/* Right: Form */}
+          <form className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm space-y-3">
+            <input
+              placeholder="Full Name"
+              className="w-full rounded-md border border-slate-300 px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white"
+            />
+            <input
+              placeholder="Email Address"
+              className="w-full rounded-md border border-slate-300 px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white"
+            />
+            <input
+              placeholder="Subject"
+              className="w-full rounded-md border border-slate-300 px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white"
+            />
+            <select className="w-full rounded-md border border-slate-300 px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white ">
               <option>Select a service</option>
               <option>Web Development</option>
+              <option>CMS Solutions</option>
+              <option>Data Science</option>
+              <option>Application Development</option>
+              <option>AI Agent Development</option>
               <option>API Development</option>
-              <option>Data & Dashboard</option>
+              <option>Others</option>
             </select>
-            <textarea placeholder="Message" rows={5} className="w-full rounded-md border border-slate-300 px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white resize-none" />
-            <button type="button" className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-3 font-medium text-white shadow hover:bg-indigo-500">Send Message</button>
+            <textarea
+              placeholder="Message"
+              rows={6}
+              className="w-full rounded-md border border-slate-300 px-4 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white resize-none"
+            />
+            <button
+              type="button"
+              className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-3 font-medium text-white shadow hover:bg-indigo-500 hover:shadow-lg hover:bg-indigo-700 transition cursor-pointer"
+            >
+              Send Message
+            </button>
           </form>
         </div>
       </div>
