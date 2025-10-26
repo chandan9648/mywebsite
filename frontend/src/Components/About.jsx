@@ -30,15 +30,15 @@ const About = () => {
               </p>
             </div>
 
-            
+
           </div>
 
           {/* Right column: Stats */}
           <div className="grid gap-4">
             <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm text-slate-700 hover:translate-x-2 transition-transform duration-300">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
-                  <path d="M8.25 4.5 3 12l5.25 7.5m7.5-15L21 12l-5.25 7.5"/>
+              <span className="inline-flex h-14 w-14 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-8 w-8">
+                  <path d="M8.25 4.5 3 12l5.25 7.5m7.5-15L21 12l-5.25 7.5" />
                 </svg>
               </span>
               <div>
@@ -48,21 +48,26 @@ const About = () => {
             </div>
 
             <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm text-slate-700 hover:translate-x-2 transition-transform duration-300">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
-                  <path d="M7.5 8.25a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Zm9 0a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM3 21a6 6 0 1 1 12 0v1.5H3V21Zm13.5 0a6 6 0 1 1 12 0v1.5h-12V21Z"/>
+              <span className="inline-flex h-14 w-14 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
+                {/* Briefcase Icon (Experience) */}
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  className="h-8 w-8">
+                  <path d="M10 2a2 2 0 0 0-2 2v1H5a2 2 0 0 0-2 2v3h18V7a2 2 0 0 0-2-2h-3V4a2 2 0 0 0-2-2h-4Zm0 3V4h4v1h-4ZM3 10v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8H3Z" />
                 </svg>
               </span>
               <div>
-                <div className="text-3xl font-bold text-indigo-600">5+</div>
-                <div className="text-md">Happy Clients</div>
+                <div className="text-3xl font-bold text-indigo-600">1+</div>
+                <div className="text-md">Experience</div>
               </div>
             </div>
 
+
             <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm text-slate-700 hover:translate-x-2 transition-transform duration-300">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
-                  <path fillRule="evenodd" d="M12 2.25a9.75 9.75 0 1 0 9.75 9.75A9.762 9.762 0 0 0 12 2.25Zm.75 5.25a.75.75 0 0 0-1.5 0v5.19l3.53 3.53a.75.75 0 1 0 1.06-1.06l-3.09-3.09V7.5Z" clipRule="evenodd"/>
+              <span className="inline-flex h-14 w-14 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-8 w-8">
+                  <path fillRule="evenodd" d="M12 2.25a9.75 9.75 0 1 0 9.75 9.75A9.762 9.762 0 0 0 12 2.25Zm.75 5.25a.75.75 0 0 0-1.5 0v5.19l3.53 3.53a.75.75 0 1 0 1.06-1.06l-3.09-3.09V7.5Z" clipRule="evenodd" />
                 </svg>
               </span>
               <div>
