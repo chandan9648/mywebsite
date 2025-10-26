@@ -166,6 +166,27 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      {/* Scroll Down Button */}
+      <Link
+        to="#about"
+        aria-label="Scroll to About section"
+        className="group absolute  left-1/2 -translate-x-1/2 inline-flex h-12 w-12 items-center justify-center rounded-full border-2 border-indigo-400 text-indigo-500 hover:bg-indigo-50/80 shadow-sm"
+      >
+        <span className="absolute inset-0 rounded-full border-2 border-indigo-200 opacity-20"></span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="h-5 w-5 transition-transform group-hover:translate-y-0.5"
+        >
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </Link>
     </section>
   );
 };
