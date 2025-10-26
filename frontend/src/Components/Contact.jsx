@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import { FiMapPin, FiMail, FiLinkedin, FiInstagram } from "react-icons/fi";
 
@@ -97,23 +98,19 @@ const ContactForm = () => {
     e.preventDefault();
     setStatus({ loading: true, ok: null, error: "" });
     try {
-      const res = await fetch(`${API_BASE}/api/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          subject: form.subject,
-          service: form.service || "Others",
-          message: form.message,
-        }),
+      const { data } = await axios.post(`${API_BASE}/api/contact`, {
+        name: form.name,
+        email: form.email,
+        subject: form.subject,
+        service: form.service || "Others",
+        message: form.message,
       });
-      const data = await res.json();
-      if (!res.ok || !data.ok) throw new Error(data.error || "Submission failed");
+      if (!data?.ok) throw new Error(data?.error || "Submission failed");
       setStatus({ loading: false, ok: true, error: "" });
       setForm({ name: "", email: "", subject: "", service: "", message: "" });
     } catch (err) {
-      setStatus({ loading: false, ok: false, error: err.message });
+      const msg = err?.response?.data?.error || err.message || "Submission failed";
+      setStatus({ loading: false, ok: false, error: msg });
     }
   };
 
