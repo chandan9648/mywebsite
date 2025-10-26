@@ -18,7 +18,7 @@ async function sendEmail({ name, email, subject, service, message }) {
   const transporter = nodemailer.createTransport({
     host: SMTP_HOST,
     port: Number(SMTP_PORT),
-    secure: Number(SMTP_PORT) === 587, // true for 465, false for others
+    secure: Number(SMTP_PORT) === 465, // true for 465, false for others
     auth: { user: SMTP_USER, pass: SMTP_PASS },
   });
 
@@ -38,6 +38,7 @@ async function sendEmail({ name, email, subject, service, message }) {
       </div>
     `,
   });
+  
 
   return { messageId: info.messageId };
 }
