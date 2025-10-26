@@ -11,14 +11,14 @@ const TagPill = ({ icon: Icon, label }) => (
 );
 
 const Card = ({ Icon, title, tags, className = "" }) => (
-  <div className={`rounded-2xl border border-slate-200 bg-white p-6 shadow-sm ${className}`}>
+  <div className={`rounded-2xl border hover:shadow-lg hover:translate-y-2 transition-transform duration-300  border-slate-200 bg-white p-6 shadow-sm ${className}`}>
     <div className="flex items-start gap-3">
       <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-100 text-indigo-600">
         <Icon size={22} />
       </span>
       <div>
         <h3 className="text-2xl font-semibold text-slate-900 leading-snug">{title}</h3>
-        <div className="mt-4 h-px w-full bg-slate-200" />
+        <div className="mt-4  h-px w-full bg-slate-200" />
       </div>
     </div>
     <div className="mt-4 flex flex-wrap gap-3">
@@ -81,7 +81,7 @@ const Skills = () => {
         </div>
         <p className="mt-3 text-center text-slate-600">Technologies I work with</p>
 
-        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {groups.map((g) => (
             <Card
               key={g.title}
