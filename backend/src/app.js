@@ -6,7 +6,10 @@ const contactRoutes = require('./routes/contactRoutes');
 const app = express();
 
 // Core middlewares
-app.use(cors());
+app.use(cors({
+    origin: 'https://chandanchaudhary.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+}));
 app.use(express.json());
 
 // Health check
