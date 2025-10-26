@@ -8,7 +8,7 @@ const app = express();
 // Core middlewares
 app.use(cors({
     origin: ['https://chandanchaudhary.vercel.app', 'http://localhost:5173'],
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    methods: ['GET', 'POST'],
 }));
 app.use(express.json());
 
