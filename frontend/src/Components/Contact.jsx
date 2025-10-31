@@ -163,7 +163,7 @@ const ContactForm = () => {
       <button
         type="submit"
         disabled={status.loading}
-        className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-3 font-medium text-white shadow hover:bg-indigo-500 disabled:opacity-60 disabled:cursor-not-allowed"
+        className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-5 py-3 font-medium text-white shadow hover:bg-indigo-500 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
       >
         {status.loading ? 'Sending…' : 'Send Message'}
       </button>
