@@ -190,7 +190,7 @@ const Home = () => {
       <Link
         to="#about"
         aria-label="Scroll to About section"
-        className="group absolute  left-1/2 -translate-x-1/2 inline-flex h-12 w-12 items-center justify-center rounded-full border-2 border-indigo-400 text-indigo-500 hover:bg-indigo-50/80 shadow-sm"
+        className="group absolute  left-1/2 -translate-x-1/2 inline-flex h-12 w-12 items-center justify-center rounded-full border-2 border-indigo-400 text-indigo-500 hover:bg-indigo-50/80 shadow-sm mt-8"
       >
         <span className="absolute inset-0 rounded-full border-2 border-indigo-200 opacity-20"></span>
         <svg
