@@ -16,7 +16,7 @@ async function sendEmail({ name, email, subject, service, message }) {
   const { RESEND_API_KEY, MAIL_TO } = process.env;
 
   if (!RESEND_API_KEY || !MAIL_TO) {
-    console.warn('⚠️ Missing RESEND_API_KEY or MAIL_TO in environment variables.');
+    console.warn('Missing RESEND_API_KEY or MAIL_TO in environment variables.');
     return { skipped: true };
   }
 
@@ -61,11 +61,11 @@ export const create = async (req, res) => {
       const mail = await sendEmail({ name, email, subject, service, message });
       res.status(201).json({ ok: true, id: doc._id, mail });
     } catch (mailErr) {
-      console.error('❌ Failed to send email:', mailErr);
+      console.error('Failed to send email:', mailErr);
       res.status(201).json({ ok: true, id: doc._id, mail: { error: 'send-failed' } });
     }
   } catch (err) {
-    console.error('❌ Contact form error:', err);
+    console.error('Contact form error:', err);
     res.status(400).json({ ok: false, error: err.message || 'Invalid payload' });
   }
 };
