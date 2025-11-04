@@ -59,8 +59,7 @@ mywebsite/
 │
 └── README.md
 
-yaml
-Copy code
+
 
 ---
 
