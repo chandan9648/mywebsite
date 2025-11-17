@@ -25,7 +25,7 @@ Built with a clean UI, smooth animations, and mobile-first design — *MyWebsite
 - Nodemailer (for contact form)  
 
 ### **Hosting**
-- GitHub Pages /  Vercel  
+- GitHub Pages / Vercel / Render  
 
 ---
 
