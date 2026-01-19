@@ -7,7 +7,7 @@ Built with a clean UI, smooth animations, and mobile-first design — *MyWebsite
 
 ## 🚀 Live Demo
 
-🔗 **Live Website:** https://chandanchaudhary.vercel.app
+🔗 **Live Website:**  https://chandanchaudhary.vercel.app || https://chandanchaudhary.me
 
 ---
 
@@ -25,7 +25,7 @@ Built with a clean UI, smooth animations, and mobile-first design — *MyWebsite
 - Nodemailer (for contact form)  
 
 ### **Hosting**
-- GitHub Pages /  Vercel  
+- GitHub Pages / Vercel / Render  
 
 ---
 
@@ -59,8 +59,7 @@ mywebsite/
 │
 └── README.md
 
-yaml
-Copy code
+
 
 ---
 
