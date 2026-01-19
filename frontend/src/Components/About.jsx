@@ -80,7 +80,7 @@ const About = () => {
                 </svg>
               </span>
               <div>
-                <div className="text-3xl font-bold text-indigo-600">2+</div>
+                <div className="text-3xl font-bold text-indigo-600">1</div>
                 <div className="text-md">Internship</div>
               </div>
             </div>

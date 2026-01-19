@@ -63,10 +63,10 @@ const Home = () => {
           {/* CTA Buttons */}
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
-              to="mailto:chandankkumar156@gmail.com"
+              to="https://drive.google.com/file/d/1ymrKyfqqI1n3r4w0Zocq-L9mKzb5OZc3/view?usp=drivesdk"
               className="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-indigo-700 transition"
             >
-              <MailIcon /> Get In Touch
+              <MailIcon /> Get My Resume
             </Link>
             <Link
               to="#projects"
