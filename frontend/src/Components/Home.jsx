@@ -104,7 +104,7 @@ const Home = () => {
             </Link>
 
             <Link
-              to="https://x.com/chandan_io"
+              to="https://x.com/chandandotio"
               target="_blank"
               rel="noreferrer"
               className="p-3 bg-white rounded-lg shadow hover:shadow-md transition"
