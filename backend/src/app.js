@@ -7,7 +7,7 @@ const app = express();
 
 // Core middlewares
 app.use(cors({
-    origin: ['https://chandanchaudhary.vercel.app', 'https://chandanchaudhary.me', 'http://localhost:5173'],
+    origin: ['https://chandanchaudhary.vercel.app', 'https://chandanchaudhary.me', 'https://www.chandanchaudhary.me', 'http://localhost:5173'],
     methods: ['GET', 'POST'],
     credentials: true,
 }));
