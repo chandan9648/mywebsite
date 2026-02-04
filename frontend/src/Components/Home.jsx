@@ -63,7 +63,7 @@ const Home = () => {
           {/* CTA Buttons */}
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
-              to="https://drive.google.com/file/d/1WLcDzgE3j2Vp7bzE71-58MeDLLO-gk0x/view?usp=drivesdk"
+              to="https://drive.google.com/file/d/1aisnI4lpGdvoU-WogJ9C5Y3TcNwYRCR6/view?usp=drivesdk"
               className="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-indigo-700 transition"
             >
               <MailIcon /> Get My Resume
