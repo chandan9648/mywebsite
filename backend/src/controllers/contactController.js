@@ -1,8 +1,6 @@
-import { Resend } from 'resend';
-import dotenv from 'dotenv';
-import ContactMessage from '../models/ContactMessage.js';
-
-dotenv.config();
+const nodemailer = require('nodemailer');
+require('dotenv').config();
+const ContactMessage = require('../models/ContactMessage');
 
 // Validation helper
 function required(field, value) {
@@ -11,19 +9,28 @@ function required(field, value) {
   }
 }
 
-// Send email using Resend API (works on Render)
+// Send email using Gmail SMTP
 async function sendEmail({ name, email, subject, service, message }) {
-  const { RESEND_API_KEY, MAIL_TO } = process.env;
+  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, MAIL_TO } = process.env;
 
-  if (!RESEND_API_KEY || !MAIL_TO) {
-    console.warn('Missing RESEND_API_KEY or MAIL_TO in environment variables.');
+  if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS || !MAIL_TO) {
+    console.warn('Missing email configuration in environment variables.');
     return { skipped: true };
   }
 
-  const resend = new Resend(RESEND_API_KEY);
+  const port = parseInt(SMTP_PORT);
+  const transporter = nodemailer.createTransport({
+    host: SMTP_HOST,
+    port: port,
+    secure: port === 465, // true for 465, false for 587
+    auth: {
+      user: SMTP_USER,
+      pass: SMTP_PASS,
+    },
+  });
 
-  const emailResponse = await resend.emails.send({
-    from: 'Portfolio Contact <onboarding@resend.dev>', // You can verify a custom domain sender later
+  const mailOptions = {
+    from: SMTP_USER,
     to: MAIL_TO,
     subject: `[New Inquiry] ${subject} - ${service}`,
     html: `
@@ -36,13 +43,14 @@ async function sendEmail({ name, email, subject, service, message }) {
         <p><strong>Message:</strong><br>${message.replace(/\n/g, '<br/>')}</p>
       </div>
     `,
-  });
+  };
 
-  return { messageId: emailResponse.id };
+  const info = await transporter.sendMail(mailOptions);
+  return { messageId: info.messageId };
 }
 
 // Main create controller
-export const create = async (req, res) => {
+const create = async (req, res) => {
   try {
     const { name, email, subject, service, message } = req.body || {};
 
@@ -69,4 +77,6 @@ export const create = async (req, res) => {
     res.status(400).json({ ok: false, error: err.message || 'Invalid payload' });
   }
 };
+
+module.exports = { create };
 

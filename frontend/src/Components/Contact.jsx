@@ -87,8 +87,7 @@ const ContactForm = () => {
   });
   const [status, setStatus] = useState({ loading: false, ok: null, error: "" });
 
-  const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://mywebsite-4ljn.on.com";
-
+  const API_BASE = import.meta.env.VITE_API_BASE_URL || (import.meta.env.DEV ? "http://localhost:3000" : "https://mywebsite-4ljn.on.com");
   const onChange = (e) => {
     const { name, value } = e.target;
     setForm((f) => ({ ...f, [name]: value }));
