@@ -68,7 +68,7 @@ const Skills = () => {
 
       { label: "AI Agents", icon: LuBrain },
       { label: "Chatbots", icon: SiChatbot },
-      { label: "App Development", icon: FiSmartphone },
+      // { label: "App Development", icon: FiSmartphone },
     ],
   };
 
